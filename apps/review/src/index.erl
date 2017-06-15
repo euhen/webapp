@@ -21,7 +21,7 @@ code() -> case wf:q(<<"code">>) of undefined  -> "../privacy.htm";
 body() ->
     wf:update(heading,#b{id=heading,body="Review: " ++ code()}),
     wf:update(logout,#button{id=logout, body="LogoutUs11 " ++ wf:user(), postback=logout}),
-    [ #span{id=upload},#button { id=send, body= <<"Chat44">>, postback=chat, source=[message] } ].
+    [ #span{id=upload},#button { id=send, body= <<"Chat445">>, postback=chat, source=[message] } ].
 
 event(init) ->
     Room = code(),
