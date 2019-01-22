@@ -21,7 +21,19 @@ code() -> case wf:q(<<"code">>) of undefined  -> "../privacy.htm";
 body() ->
     wf:update(heading,#b{id=heading,body="Review: " ++ code()}),
     wf:update(logout,#button{id=logout, body="LogoutUs11 " ++ wf:user(), postback=logout}),
-    [ #span{id=upload},#button { id=send, body= <<"Chat445">>, postback=chat, source=[message] } ].
+    [ #span{id=upload},#button { id=send, body= <<"Chat446">>, postback=chat, source=[message] },
+	  #button{ body= <<"My page">>, postback=chat, source=[message] },
+	  #dropdown { id=drop, 
+		value="2", 
+		size="3",
+		source=[drop], 
+		options=[ 
+		#option { label= <<"Microsoft">>, value= <<"Windows">> }, 
+		#option { label= <<"Google">>, value= <<"Android">> }, 
+		#option { label= <<"Apple">>, value= <<"Mac">> } 
+		]
+	  }
+	].
 
 event(init) ->
     Room = code(),
