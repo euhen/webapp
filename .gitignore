@@ -17,4 +17,4 @@ Mnesia*
 **/Mnesia*/**
 test/bert.data
 .idea/
-.git/
+.bzr/
